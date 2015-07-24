@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codepath.testingdemo" >
+
+    <!-- Disable animations on debug builds so that the animations do not interfere with Espresso
+           tests. Note: This is just requesting the permission. The permission must also be
+           acquired over adb! -->
+    <uses-permission android:name="android.permission.SET_ANIMATION_SCALE" />
+
+</manifest>

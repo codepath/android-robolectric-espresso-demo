@@ -10,11 +10,53 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        dev {
+            applicationId "com.codepath.testingdemo"
+        }
+
+        production {
+            applicationId "com.codepath.testingdemo"
+        }
+    }
+}
+
+// Get the path to ADB.  Required when running tests directly from Android Studio.
+// Source: http://stackoverflow.com/a/26771087/112705
+def adb = android.getAdbExe().toString()
+
+// Source: http://stackoverflow.com/q/29908110/112705
+afterEvaluate {
+    task grantAnimationPermissionDev(type: Exec, dependsOn: 'installDevDebug') {
+        commandLine "$adb shell pm grant $android.productFlavors.dev.applicationId android.permission.SET_ANIMATION_SCALE".split(' ')
+    }
+
+    task grantAnimationPermissionProduction(type: Exec, dependsOn: 'installProductionDebug') {
+        commandLine "$adb shell pm grant $android.productFlavors.production.applicationId android.permission.SET_ANIMATION_SCALE".split(' ')
+    }
+
+    // When launching individual tests from Android Studio, it seems that only the assemble tasks
+    // get called directly, not the install* versions
+    tasks.each { task ->
+        if (task.name.startsWith('assembleDevDebugAndroidTest')) {
+            task.dependsOn grantAnimationPermissionDev
+        } else if (task.name.startsWith('assembleProductionDebugAndroidTest')) {
+            task.dependsOn grantAnimationPermissionProduction
         }
     }
 }
@@ -35,4 +77,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    androidTestCompile 'com.android.support.test:runner:0.3'
+    androidTestCompile 'com.android.support.test:rules:0.3'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2'
 }
