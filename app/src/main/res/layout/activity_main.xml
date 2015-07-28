@@ -36,4 +36,11 @@
         android:text="Localized Text"
         android:onClick="launchLocalizedActivity"/>
 
+    <Button
+        android:id="@+id/btnLaunchGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Game"
+        android:onClick="launchGame"/>
+
 </LinearLayout>

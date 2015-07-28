@@ -9,5 +9,23 @@
     <string name="title_activity_localized">LocalizedActivity</string>
     <string name="title_activity_first">FirstActivity</string>
     <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+    <string name="title_activity_view_pager">ViewPagerActivity</string>
+
+    <string name="level_complete_message">Level %1$d\ncompleted!</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_date_time_picker">DateTimePickerActivity</string>
+    <string name="pick_date_button_text">Pick Date</string>
+    <string name="pick_time_button_text">Pick time</string>
+    <string name="complete_level_button_text">Complete Level</string>
+    <string name="title_activity_listener">ListenerActivity</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="title_activity_network_request">NetworkRequestActivity</string>
+    <string name="title_activity_password">PasswordActivity</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="take_picture_button_text">Take Picture</string>
+    <string name="title_activity_level_complete">LevelCompleteActivity</string>
 
 </resources>

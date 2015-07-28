@@ -49,4 +49,9 @@ public class Post implements Serializable {
         }
         return result;
     }
+
+    @Override
+    public String toString() {
+        return String.format("User: %s, caption: %s", userName, caption);
+    }
 }

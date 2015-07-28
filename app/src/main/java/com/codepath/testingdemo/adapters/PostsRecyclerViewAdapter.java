@@ -16,12 +16,15 @@ import java.util.List;
 /*
  * Simple Adapter that populates a single textView that shows a userName / caption in each item
  */
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostItemViewHolder> {
+public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecyclerViewAdapter.PostItemViewHolder> {
     private static final String TAG = "InstagramPostsAdapter";
 
     private List<Post> posts;
 
-    public PostsAdapter(List<Post> posts) {
+    private OnItemClickListener listener;
+
+
+    public PostsRecyclerViewAdapter(List<Post> posts) {
         this.posts = (posts == null ? new ArrayList<Post>() : posts);
     }
 
@@ -29,6 +32,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostItemView
     public PostItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int position) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.layout_item_post, viewGroup, false);
+
         return new PostItemViewHolder(itemView);
     }
 
@@ -49,13 +53,29 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostItemView
         return posts == null ? 0 : posts.size();
     }
 
-    public static final class PostItemViewHolder extends RecyclerView.ViewHolder {
+    public final class PostItemViewHolder extends RecyclerView.ViewHolder {
         TextView tvCaption;
 
-        public PostItemViewHolder(View itemView) {
+        public PostItemViewHolder(final View itemView) {
             super(itemView);
 
             tvCaption = (TextView) itemView.findViewById(R.id.tvCaption);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Triggers click upwards to the adapter on click
+                    if (listener != null)
+                        listener.onItemClick(itemView, PostItemViewHolder.this.getPosition());
+                }
+            });
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 }

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codepath.testingdemo" >
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,6 +43,42 @@
         <activity
             android:name=".activities.IntentTwoActivity"
             android:label="@string/title_activity_second" >
+        </activity>
+        <activity
+            android:name=".activities.ListViewActivity"
+            android:label="@string/title_activity_list_view" >
+        </activity>
+        <activity
+            android:name=".activities.ViewPagerActivity"
+            android:label="@string/title_activity_view_pager" >
+        </activity>
+        <activity
+            android:name=".activities.DateTimePickerActivity"
+            android:label="@string/title_activity_date_time_picker" >
+        </activity>
+        <activity
+            android:name=".activities.ScrollActivity"
+            android:label="@string/title_activity_scrolling" >
+        </activity>
+        <activity
+            android:name=".activities.CustomNetworkRequestActivity"
+            android:label="@string/title_activity_network_request" >
+        </activity>
+        <activity
+            android:name=".activities.PasswordActivity"
+            android:label="@string/title_activity_password" >
+        </activity>
+        <activity
+            android:name=".activities.NetworkRequestActivity"
+            android:label="@string/title_activity_network_request" >
+        </activity>
+        <activity
+            android:name=".activities.CameraActivity"
+            android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name=".activities.LevelCompleteActivity"
+            android:label="@string/title_activity_level_complete" >
         </activity>
     </application>
 

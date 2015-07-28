@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.codepath.testingdemo.activities.DateTimePickerActivity">
+
+    <Button
+        android:id="@+id/btnDatePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onDatePickerClicked"
+        android:text="@string/pick_date_button_text" />
+
+    <Button
+        android:id="@+id/btnTimePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onTimePickerClicked"
+        android:text="@string/pick_time_button_text" />
+
+    <Button
+        android:id="@+id/btnCompleteLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCompleteLevelClicked"
+        android:enabled="false"
+        android:text="@string/complete_level_button_text" />
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/hello_world" />
+
+</LinearLayout>

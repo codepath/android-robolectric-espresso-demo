@@ -2,15 +2,14 @@ package com.codepath.testingdemo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.codepath.testingdemo.R;
 
 /*
- * Launch other activites from this activity
+ * Launch other activities from this activity
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends GameLevelActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, IntentOneActivity.class);
         intent.putExtra(IntentOneActivity.EXTRA_MESSAGE, "First Activity");
         startActivity(intent);
+    }
+    public void launchGame(View view) {
+        launchLevelPassedActivity();
     }
 }

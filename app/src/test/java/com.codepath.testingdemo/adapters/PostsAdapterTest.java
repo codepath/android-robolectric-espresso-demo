@@ -44,13 +44,13 @@ public class PostsAdapterTest {
         );
 
 
-        PostsAdapter adapter = new PostsAdapter(posts);
+        PostsRecyclerViewAdapter adapter = new PostsRecyclerViewAdapter(posts);
 
         RecyclerView rvParent = new RecyclerView(context);
         rvParent.setLayoutManager(new LinearLayoutManager(context));
 
         // Run test
-        PostsAdapter.PostItemViewHolder viewHolder =
+        PostsRecyclerViewAdapter.PostItemViewHolder viewHolder =
                 adapter.onCreateViewHolder(rvParent, 0);
 
         adapter.onBindViewHolder(viewHolder, 0);

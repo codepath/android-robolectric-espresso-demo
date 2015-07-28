@@ -1,21 +1,21 @@
 package com.codepath.testingdemo.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.codepath.testingdemo.R;
-import com.codepath.testingdemo.adapters.PostsAdapter;
+import com.codepath.testingdemo.adapters.PostsRecyclerViewAdapter;
+import com.codepath.testingdemo.data.Data;
 import com.codepath.testingdemo.models.Post;
 
-import java.util.Arrays;
 import java.util.List;
 
 /*
  * Simple RecyclerView that shows a userName / caption in each item
  */
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends GameLevelActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,20 @@ public class RecyclerViewActivity extends AppCompatActivity {
         rvPosts.setLayoutManager(layoutManager);
         rvPosts.setHasFixedSize(true);
 
-        List<Post> posts = getPosts();
-        rvPosts.setAdapter(new PostsAdapter(posts));
-    }
+        List<Post> posts = Data.POSTS;
 
-    private List<Post> getPosts() {
-        return Arrays.asList(
-                new Post("Steph", "We Won!!!"),
-                new Post("Lebron", "No comment"),
-                new Post("Andre", "Yes!")
-        );
+        PostsRecyclerViewAdapter adapter = new PostsRecyclerViewAdapter(posts);
+
+        adapter.setOnItemClickListener(new PostsRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+                if (position == 2) {
+                    launchLevelPassedActivity();
+                }
+            }
+        });
+        rvPosts.setAdapter(adapter);
+
     }
 }
