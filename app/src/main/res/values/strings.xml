@@ -27,5 +27,10 @@
     <string name="title_activity_camera">CameraActivity</string>
     <string name="take_picture_button_text">Take Picture</string>
     <string name="title_activity_level_complete">LevelCompleteActivity</string>
+    <string name="title_activity_espresso_demo">EspressoDemoActivity</string>
+    <string name="enter_text_hint">Search</string>
+    <string name="get_time">Get Time</string>
+    <string name="submit">Submit</string>
+    <string name="last_search">Last Search</string>
 
 </resources>

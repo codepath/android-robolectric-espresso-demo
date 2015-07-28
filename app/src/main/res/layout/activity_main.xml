@@ -53,11 +53,11 @@
         android:textSize="30sp"/>
 
     <Button
-        android:id="@+id/btnLaunchFirstEspressoActivity"
+        android:id="@+id/btnLaunchEspressoDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Demo"
-        android:onClick="launchGame"/>
+        android:onClick="launchDemo"/>
 
     <Button
         android:id="@+id/btnLaunchGame"

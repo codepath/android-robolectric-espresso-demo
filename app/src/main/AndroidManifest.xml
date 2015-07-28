@@ -80,6 +80,10 @@
             android:name=".activities.LevelCompleteActivity"
             android:label="@string/title_activity_level_complete" >
         </activity>
+        <activity
+            android:name=".activities.EspressoDemoActivity"
+            android:label="@string/title_activity_espresso_demo" >
+        </activity>
     </application>
 
 </manifest>

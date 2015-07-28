@@ -44,6 +44,11 @@ public class MainActivity extends GameLevelActivity {
         intent.putExtra(IntentOneActivity.EXTRA_MESSAGE, "First Activity");
         startActivity(intent);
     }
+
+    public void launchDemo(View view) {
+        launchActivity(EspressoDemoActivity.class);
+    }
+
     public void launchGame(View view) {
         launchLevelPassedActivity();
     }
