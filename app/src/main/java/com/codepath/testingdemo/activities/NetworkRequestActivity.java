@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.codepath.testingdemo.R;
+import com.codepath.testingdemo.data.Data;
 import com.codepath.testingdemo.models.Post;
 import com.codepath.testingdemo.networking.DemoHttpClient;
 
@@ -37,7 +38,7 @@ public class NetworkRequestActivity extends GameLevelActivity {
             @Override
             public void onSuccess(List<Post> posts) {
                 Toast.makeText(NetworkRequestActivity.this, "Network request success!", Toast.LENGTH_SHORT).show();
-                btnCompleteLevel.setEnabled(posts != null && posts.size() == 3);
+                btnCompleteLevel.setEnabled(posts != null && posts.size() == Data.POSTS.size());
             }
 
             @Override

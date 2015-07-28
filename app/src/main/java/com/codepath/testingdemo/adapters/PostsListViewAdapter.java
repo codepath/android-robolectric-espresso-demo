@@ -32,7 +32,7 @@ public class PostsListViewAdapter extends ArrayAdapter<Post> {
             viewHolder = (ViewHolder)convertView.getTag();
         }
 
-        viewHolder.tvCaption.setText(post.userName + post.caption);
+        viewHolder.tvCaption.setText(String.format("%s: %s", post.userName, post.caption));
 
         return convertView;
     }

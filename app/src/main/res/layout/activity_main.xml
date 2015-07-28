@@ -3,8 +3,16 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_gravity="center"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="16dp"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Robolectric"
+        android:textSize="30sp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -35,6 +43,21 @@
         android:layout_height="wrap_content"
         android:text="Localized Text"
         android:onClick="launchLocalizedActivity"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:text="Espresso"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/btnLaunchFirstEspressoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Demo"
+        android:onClick="launchGame"/>
 
     <Button
         android:id="@+id/btnLaunchGame"
