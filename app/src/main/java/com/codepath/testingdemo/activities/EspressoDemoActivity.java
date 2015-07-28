@@ -8,8 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.codepath.testingdemo.R;
-import com.codepath.testingdemo.data.Data;
-import com.codepath.testingdemo.models.Post;
+import com.codepath.testingdemo.models.User;
 
 public class EspressoDemoActivity extends AppCompatActivity {
 
@@ -17,11 +16,11 @@ public class EspressoDemoActivity extends AppCompatActivity {
     EditText etSearch;
     Button btnSubmit;
 
-    TextView tvFormattedLikers;
+    TextView tvCurrentUser;
 
-    Button btnDisplayFormattedLikers;
+    Button btnDisplayCurrentUser;
 
-    Post post;
+    User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +31,8 @@ public class EspressoDemoActivity extends AppCompatActivity {
         btnSubmit = (Button)findViewById(R.id.btnSubmit);
         tvSearchText = (TextView)findViewById(R.id.tvSearchText);
 
-        tvFormattedLikers = (TextView)findViewById(R.id.tvFormattedLikers);
-        btnDisplayFormattedLikers = (Button)findViewById(R.id.btnDisplayFormattedLikers);
+        tvCurrentUser = (TextView)findViewById(R.id.tvCurrentUser);
+        btnDisplayCurrentUser = (Button)findViewById(R.id.btnDisplayCurrentUser);
 
     }
 
@@ -42,14 +41,14 @@ public class EspressoDemoActivity extends AppCompatActivity {
         etSearch.setText("");
     }
 
-    public void setPost(Post post) {
-        this.post = post;
+    public void setCurrentUser(User user) {
+        this.currentUser = user;
     }
 
-    public void onDisplayFormattedLikersClicked(View view) {
-        if (post == null) {
-            post = Data.POSTS.get(0);
+    public void onDisplayCurrentUserClicked(View view) {
+        if (currentUser == null) {
+            return;
         }
-        tvFormattedLikers.setText(post.formatLikersForDisplay("likes"));
+        tvCurrentUser.setText(currentUser.getUserName());
     }
 }

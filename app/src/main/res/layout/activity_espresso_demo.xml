@@ -36,10 +36,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/darker_gray" />
+
     <TextView
         android:text="@string/hello_world"
         android:textSize="24sp"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -48,20 +54,26 @@
         android:textSize="24sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/darker_gray" />
 
     <Button
-        android:id="@+id/btnDisplayFormattedLikers"
+        android:id="@+id/btnDisplayCurrentUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onDisplayFormattedLikersClicked"
-        android:text="Display Post Info"/>
+        android:onClick="onDisplayCurrentUserClicked"
+        android:text="Display Current User"/>
 
     <TextView
-        android:id="@+id/tvFormattedLikers"
-        android:text="FormattedLikers"
+        android:id="@+id/tvCurrentUser"
+        android:text="No logged in user"
         android:textSize="24sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
 </LinearLayout>
